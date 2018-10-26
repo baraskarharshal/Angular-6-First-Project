@@ -1,0 +1,18 @@
+<h1>Model driven form</h1>
+
+<form class="example-form" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    <mat-form-field class="example-full-width">
+        <input type="email" name="emailid" formControlName="emailid" matInput placeholder="Email" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <input type="password" name="passwd" formControlName="passwd" matInput placeholder="Password" ngModel>
+    </mat-form-field>
+    <br>
+    <button type="submit" [disabled]="!formdata.valid" value="Log In" mat-raised-button color="primary">Submit</button>
+
+</form>
+
+<p>
+    Email entered is : {{emailid}}
+</p>
